@@ -39,7 +39,7 @@ export default function PaginaInicial() {
 
   return (
     <>
-      
+
       <Box
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -66,9 +66,9 @@ export default function PaginaInicial() {
           {/* Formulário */}
           <Box
             as="form"
-            onSubmit={function(infosDoEvento){
+            onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault();
-              roteamento.push('/chat')
+              roteamento.push(`/chat?username=${username}`)
             }}
             styleSheet={{
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
