@@ -120,7 +120,6 @@ export default function ChatPage() {
 
                     <MessageList mensagens={listaDeMensagens} />
 
-
                     <Box
                         as="form"
                         styleSheet={{
@@ -166,6 +165,23 @@ export default function ChatPage() {
                                 mainColorLight: appConfig.theme.colors.primary[400],
                                 mainColorStrong: appConfig.theme.colors.primary[600],
                             }}
+                            styleSheet={{
+                                borderRadius: '50%',
+                                padding: '0 3px 0 0',
+                                minWidth: '50px',
+                                minHeight: '50px',
+                                fontSize: '20px',
+                                marginBottom: '8px',
+                                lineHeight: '0',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginRight: '10px',
+                                backgroundColor: appConfig.theme.colors.neutrals[300],
+
+                            }
+                            }
+                            label="Ok"
                         />
                         {/* CallBack */}
                         <ButtonSendSticker
@@ -260,7 +276,7 @@ function MessageList(props) {
                         {/* Condicional: {mensagem.texto.startsWith(':sticker:').toString()} */}
                         {mensagem.texto.startsWith(':sticker:')
                             ? (
-                                <Image src={mensagem.texto.replace(':sticker:', '')} />
+                                <Image src={mensagem.texto.replace(':sticker:', '')} width="150" height="75" />
                             )
                             : (
                                 mensagem.texto
